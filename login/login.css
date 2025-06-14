@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    color: white;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.left, .right {
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Estilo da parte esquerda */
+.left {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    text-align: center;
+}
+
+.logo {
+    width: 22rem;
+    height: auto;
+    margin-bottom: 0.1rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #ccc;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 120%;
+    max-width: 25rem;
+    margin: 0 auto;
+
+}
+
+input {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #555;
+    border-radius: 15px;
+    background-color: #111;
+    color: white;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #999;
+}
+
+button {
+    padding: 0.8rem;
+    background-color: transparent;
+    border: 2px solid #daa520;
+    color: #daa520;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.8s ease-in-out;
+}
+
+button span {
+    margin-left: 8px;
+}
+
+button:hover {
+    background-color: #daa520;
+    color: black;
+    scale: 1.05;
+    font-size: larger;
+    
+}
+
+/* Estilo da parte direita com imagem cheia */
+.right {
+    width: 70%;
+    height: 100%;
+    background-image: url('../login imagens/Imagem do WhatsApp de 2025-06-13 à(s) 16.40.29_eda31f2b.jpg');
+    background-size: 100% auto; /* aumenta largura 120%, altura automática */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+.imgprincipal {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .logo{
+        width: 16rem;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    input{
+        position: inherit;
+        right: 2rem;
+    }
+    
+}
