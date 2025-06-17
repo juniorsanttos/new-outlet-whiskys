@@ -6,87 +6,55 @@ body {
   background-color: #ffffff;
 }
 
-/* Ocupa o espaço até o rodapé */
 main {
   flex: 1;
 }
 
-/*Header*/
-header{
+header {
   background-color: #000000;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   height: 15vh;
+  position: relative;
 }
 
-
-.product-img {
-  height: 310px;
-  object-fit: cover;
-  border-radius: 10px;
+.logo {
+  width: 120px;
+  height: 120px;
 }
 
-footer {
-  border-top: 1px solid #ccc;
-}
-
-.footer-column h5,
-.footer-column h6 {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.footer-column p {
-  margin: 0;
-  font-size: 14px;
-}
 .imgproduto {
   width: 90%;
-  height: 300px; /* Aumentei de 200px para 300px */
+  height: 300px;
   margin: 10px auto;
-  object-fit: contain; /* Troquei cover por contain */
+  object-fit: contain;
   border-radius: 20px;
   display: block;
-  background-color: white; /* Garante que não fique fundo estranho ao redor */
+  background-color: white;
   box-shadow: #cd8913 0px 0px 10px;
   transition: .5s ease-in-out;
 }
-
 .imgproduto:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
-.naveg{
-    font-size: 1.2rem;
-    word-spacing: 1rem;
-    position: relative;
-    left: 1rem;
-}
-.text-center py-5{
-    padding-bottom: 1rem;
+.naveg {
+  display: flex;
+  gap: 1.5rem;
 }
 
-.carousel-slide-container{
-    position: relative;
-    bottom: 22rem;
+.conta {
+  padding: 7px 10px;
+  border: #cd8913 1.5px solid;
+  background-color: #050609;
+  color: #fff;
+  border-radius: 7px;
+  transition: .5s ease-in-out;
 }
-
-.conta{
-    padding: 7px 10px;
-    border: #cd8913 1.5px solid;
-    background-color: #050609;
-    color: #fff;
-    border-radius: 7px;
-    transition: .5s ease-in-out;
+.conta:hover {
+  box-shadow: #cd8913 0px 0px 10px;
+  transform: scale(1.1);
+  color: #fdfdfd;
 }
-.conta:hover{
-    box-shadow: #cd8913 0px 0px 10px;
-    transform: scale(1.05);
-    color: #fdfdfd;
-}
-
-.conta:active{
+.conta:active {
   background-color: #cd8913;
   color: #ffffff;
   transition: .2s ease-in-out;
@@ -94,16 +62,83 @@ footer {
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
-}
-.carousel-control-prev {
-  left: auto; /* afasta a seta da esquerda mais pro lado */
+  filter: invert(100%);
 }
 
-.carousel-control-next {
-  right:  0 auto; /* afasta a seta da direita mais pro lado */
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 2000;
 }
-.logo{
-  width: 120px;
-  height: 120px;
+
+/* MOBILE */
+@media screen and (max-width: 729px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .naveg {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 1000;
+  }
+
+  .naveg.show {
+    display: flex;
+  }
+
+  .conta {
+    display: none;
+  }
+
+  .imgproduto {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .carousel-item .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .carousel-inner .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+  }
 }
+
+
