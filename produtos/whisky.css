@@ -3,13 +3,23 @@ body {
   flex-direction: column;
   min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-color: #fdfdfd;
+  background-color: #ffffff;
 }
 
 /* Ocupa o espaço até o rodapé */
 main {
   flex: 1;
 }
+
+/*Header*/
+header{
+  background-color: #000000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 15vh;
+}
+
 
 .product-img {
   height: 310px;
@@ -32,14 +42,21 @@ footer {
   font-size: 14px;
 }
 .imgproduto {
-  width: 100%;
+  width: 90%;
   height: 300px; /* Aumentei de 200px para 300px */
+  margin: 10px auto;
   object-fit: contain; /* Troquei cover por contain */
-  border: 3px solid gold;
   border-radius: 20px;
   display: block;
   background-color: white; /* Garante que não fique fundo estranho ao redor */
+  box-shadow: #cd8913 0px 0px 10px;
+  transition: .5s ease-in-out;
 }
+
+.imgproduto:hover {
+  transform: scale(1.02);
+}
+
 .naveg{
     font-size: 1.2rem;
     word-spacing: 1rem;
@@ -56,31 +73,35 @@ footer {
 }
 
 .conta{
-    background-color: #f0ad4e;
-    color: #fdfdfd;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-style:oblique;
-    font-weight: bold;
-    transition: 1s;
-    cursor: pointer ;
+    padding: 7px 10px;
+    border: #cd8913 1.5px solid;
+    background-color: #050609;
+    color: #fff;
+    border-radius: 7px;
+    transition: .5s ease-in-out;
 }
 .conta:hover{
-    background-color: #ec971f;
+    box-shadow: #cd8913 0px 0px 10px;
+    transform: scale(1.05);
     color: #fdfdfd;
-    transform: scale(1.1);
 }
+
+.conta:active{
+  background-color: #cd8913;
+  color: #ffffff;
+  transition: .2s ease-in-out;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(200%) contrast(100%);
 }
 .carousel-control-prev {
-  left: -30px; /* afasta a seta da esquerda mais pro lado */
+  left: auto; /* afasta a seta da esquerda mais pro lado */
 }
 
 .carousel-control-next {
-  right: -30px; /* afasta a seta da direita mais pro lado */
+  right:  0 auto; /* afasta a seta da direita mais pro lado */
 }
 .logo{
   width: 120px;
