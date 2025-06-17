@@ -97,7 +97,7 @@ button:hover {
 .right {
     width: 70%;
     height: 100%;
-    background-image: url('../login imagens/Imagem do WhatsApp de 2025-06-13 à(s) 16.40.29_eda31f2b.jpg');
+    background-image: url('images/whisky-bg.jpg');
     background-size: 100% auto; /* aumenta largura 120%, altura automática */
     background-position: center;
     background-repeat: no-repeat;
