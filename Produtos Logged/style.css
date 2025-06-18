@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/*Botão Hamburguer*/
+#menu-toggle{
+    display: none;
+}
+
+/*Header*/
+header {
+  background-color: #000000;
+  height: 15vh;
+  position: relative;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+}
+
+.naveg {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.conta {
+  padding: 7px 10px;
+  border: #cd8913 1.5px solid;
+  background-color: #050609;
+  color: #fff;
+  border-radius: 7px;
+  transition: .5s ease-in-out;
+}
+.conta:hover {
+  box-shadow: #cd8913 0px 0px 10px;
+  transform: scale(1.1);
+  color: #fdfdfd;
+}
+.conta:active {
+  background-color: #cd8913;
+  color: #ffffff;
+  transition: .2s ease-in-out;
+}
+
+/*Main*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border: #cd8913 2px solid;
+    border-radius: 7px;
+    width: 100%;
+    height: 60vh;
+    padding: 10px;
+    margin: 10px;
+}
+
+/*Editando Card*/
+.card{
+    border: #000000 2px solid;
+    border-radius: 7px;
+    background-color: #050609;
+    width: 500%;
+    height: 50vh;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.star{
+    background-color: red;
+    width: 100%;
+    height: 10vh;
+}
+
+picture{
+    background-color: aqua;
+}
+
+.info{
+    background-color: #cd8913;
+}
