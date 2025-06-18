@@ -1,31 +1,123 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Outlet Whisky</title>
-    <link rel="stylesheet" href="registro.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro Outlet Whisky</title>
+  <link rel="stylesheet" href="registro.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    /* Só CSS do modal para funcionar o popup */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.6);
+      justify-content: center;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .modal-content {
+      background-color: #000;
+      color: #daa520;
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      border: 2px solid #daa520;
+      max-width: 300px;
+      box-shadow: 0 0 20px #daa52088;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .modal-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .modal-content button {
+      padding: 0.5rem 1rem;
+      background-color: #daa520;
+      border: none;
+      color: black;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: 0.3s;
+    }
+
+    .modal-content button:hover {
+      background-color: #b8860b;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
-    <main class="container">
-        <section class="left">
-            <img src="../login imagens/Logo PNG.png" alt="Logo" class="logo">
+  <main class="container">
+    <section class="left">
+      <img src="../assets/Logo PNG.png" alt="Logo" class="logo" />
+      <h1>Seja Bem-Vindo(a) a Loja!</h1>
+      <h3>Crie Suas Credenciais Abaixo</h3>
+      <form id="registroForm" onsubmit="return registrarUsuario(event)">
+        <input type="text" id="usuarioRegistro" placeholder="Nome de Usuário" required />
+        <input type="email" id="emailRegistro" placeholder="Email" required />
+        <input type="password" id="senhaRegistro" placeholder="Senha" required />
+        <input type="password" id="confirmaSenhaRegistro" placeholder="Confirme a Senha" required />
+        <button type="submit">Registrar <span>→</span></button>
+      </form>
+    </section>
+    <section class="right"></section>
+  </main>
 
-            <h1>Seja Bem-Vindo(a) a Loja!</h1>
-            <h3>Crie Suas Credenciais Abaixo</h3>
-            <form action="">
-                <input type="text" placeholder="Nome de Usuário" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Senha" required>
-                <input type="password" name="" id="" placeholder="Confirme a Senha" required>
-                <button type="submit">Entrar <span>→</span></button>
-            </form>
-            </section>
-        </section>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2 id="modalMensagem">Mensagem</h2>
+      <button onclick="fecharModal()">OK</button>
+    </div>
+  </div>
 
-        <section class="right">
-        </section>
-    </main>
+  <script>
+    function registrarUsuario(event) {
+      event.preventDefault();
+
+      const usuario = document.getElementById('usuarioRegistro').value.trim();
+      const email = document.getElementById('emailRegistro').value.trim();
+      const senha = document.getElementById('senhaRegistro').value;
+      const confirmaSenha = document.getElementById('confirmaSenhaRegistro').value;
+
+      if (senha !== confirmaSenha) {
+        mostrarModal('As senhas não coincidem.');
+        return false;
+      }
+
+      const dadosUsuario = { usuario, email, senha };
+      localStorage.setItem('dadosUsuario', JSON.stringify(dadosUsuario));
+      mostrarModal('Cadastro realizado com sucesso! Você já pode fazer login.');
+      document.getElementById('registroForm').reset();
+      return false;
+    }
+
+    function mostrarModal(mensagem) {
+  document.getElementById('modalMensagem').innerText = mensagem;
+  document.getElementById('modal').style.display = 'flex';
+}
+
+function fecharModal() {
+  const mensagem = document.getElementById('modalMensagem').innerText;
+  document.getElementById('modal').style.display = 'none';
+
+  if (mensagem === 'Cadastro realizado com sucesso! Você já pode fazer login.') {
+    window.location.href = './login.html';
+  }
+}
+
+  </script>
 </body>
 </html>
