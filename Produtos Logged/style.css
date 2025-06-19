@@ -157,3 +157,85 @@ picture img{
     background-color: #ffffff;
     color: #050609;
 }
+
+/*Botão hamburguer*/
+/* BOTÃO HAMBÚRGUER */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 40px;
+  right: 20px;
+  z-index: 2000;
+}
+
+/* MOBILE */
+@media screen and (max-width: 729px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .naveg {
+    display: none;
+    flex-direction: column;
+    background-color: #000;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    padding: 1rem;
+    gap: 1rem;
+    z-index: 1000;
+  }
+
+  .naveg.show {
+    display: flex;
+  }
+
+  .conta {
+    display: none;
+  }
+
+  .imgproduto {
+    height: 180px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .carousel-item .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .carousel-inner .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  .footer-column {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .logo {
+    width: 130px;
+    height: 130px;
+    align-items: center;
+    margin: 0 auto;
+  }
+  .menu-toggle{
+    color: #fff;
+  }
+}

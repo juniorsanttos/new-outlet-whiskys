@@ -71,10 +71,6 @@ header {
   font-size: 2rem;
   color: white;
   cursor: pointer;
-  position: absolute;
-  top: 40px;
-  right: 20px;
-  z-index: 2000;
 }
 
 /* MOBILE */
@@ -141,4 +137,23 @@ header {
   }
 }
 
+header nav a{
+    text-decoration: none;
+    color: #ffffff;
+    position: relative;
+}
 
+header nav a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: #cd8913;
+    transition: all .3s ease-in-out;
+}
+
+header nav a:hover::before{
+    width: 100%;
+}

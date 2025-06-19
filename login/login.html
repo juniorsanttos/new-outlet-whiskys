@@ -77,7 +77,7 @@
   <div id="modal" class="modal">
     <div class="modal-content">
       <h2 id="modalMensagem">Mensagem</h2>
-      <button onclick="fecharModal()">OK</button>
+      <a id="modalLink" href=""><button onclick="fecharModal()">OK</button></a>
     </div>
   </div>
 
@@ -87,6 +87,7 @@
 
       const usuarioInput = document.getElementById('usuario').value.trim();
       const senhaInput = document.getElementById('senha').value;
+      var link = document.getElementById('modalLink');
 
       const dadosSalvos = JSON.parse(localStorage.getItem('dadosUsuario'));
 
@@ -97,7 +98,10 @@
 
       if (usuarioInput === dadosSalvos.usuario && senhaInput === dadosSalvos.senha) {
         mostrarModal('Login bem-sucedido!');
+        link.href = "../Produtos Logged/index.html";
+
         // aqui você pode redirecionar, ex: setTimeout(() => window.location.href = "dashboard.html", 2000);
+        
       } else {
         mostrarModal('Usuário ou senha incorretos.');
       }

@@ -7,6 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 
+
 /*Header*/
 header{
     display: flex;
@@ -64,6 +65,11 @@ header button{
 header button:hover{
     background-color: #cd8913;
     box-shadow: #cd8913 0px 0px 10px;
+    color: #ffffff;
+}
+
+header a{
+    text-decoration: none;
     color: #ffffff;
 }
 
